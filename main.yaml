@@ -146,3 +146,13 @@
       - visual-studio-code-bin
       - ytop-bin # Modern top alternative
       - zoom
+- name: Configure user
+  hosts: localhost
+  tasks:
+  - name: Get dotfiles from github using chezmoi
+    command: chezmoi init https://github.com/bamorim/dotfiles.git
+  - name: Install vscode extensions
+    script: ./scripts/install-vscode-extensions.sh
+  - name: Install oh-my-zsh
+    shell: |
+      [[ -d $HOME/.oh-my-zsh ]] || sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
