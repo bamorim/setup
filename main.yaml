@@ -149,8 +149,6 @@
 - name: Configure user
   hosts: localhost
   tasks:
-  - name: Get dotfiles from github using chezmoi
-    command: chezmoi init https://github.com/bamorim/dotfiles.git
   - name: Install vscode extensions
     script: ./scripts/install-vscode-extensions.sh
   - name: Install oh-my-zsh
