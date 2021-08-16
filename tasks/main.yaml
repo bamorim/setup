@@ -1,0 +1,148 @@
+---
+- name: Setup Arch Packages
+  hosts: localhost
+  roles:
+  - kewlfft.aur
+  tasks:
+  - name: Update pacman repositories
+    become: true
+    community.general.pacman:
+      update_cache: yes
+  - name: Install Arch Packages
+    become: true
+    community.general.pacman:
+      name:
+      - android-tools
+      - ansible
+      - aspnet-runtime
+      - audacity
+      - aws-cli
+      - base-devel
+      - bat # Fancier cat alternative
+      - calibre
+      - chezmoi
+      - curl
+      - dbeaver
+      - discord
+      - docker
+      - docker-compose
+      - dotnet-sdk
+      - evince
+      - fd # Faster alternative to find
+      - firefox
+      - fzf
+      - gimp
+      - gist
+      - git
+      - github-cli
+      - glu # Erlang wxWidgets
+      - gnupg
+      - gpick
+      - handbrake
+      - helm
+      - helmfile
+      - htop # top alternative
+      - httpie 
+      - hyperfine
+      - inkscape
+      - inotify-tools
+      - jdk-openjdk
+      - jre-openjdk
+      - kdenlive
+      - kitty
+      - krita
+      - kubectl
+      - kubectx
+      - libpng # Erlang wxWidgets
+      - mesa # Erlang wxWidgets
+      - mkcert
+      - mpv # Lightweight video player
+      - neofetch
+      - pinta
+      - postgresql
+      - procs # Modern alternative to ps
+      - qrencode
+      - remmina # Remote desktop client with RDP, VNC and other protocols
+      - ripgrep
+      - rustup
+      - shellcheck
+      - solaar
+      - starship
+      - streamlink
+      - swaks # CLI for testing SMTP servers
+      - telegram-desktop
+      - terraform
+      - texlive-most
+      - thefuck
+      - tmux
+      - tokei # Fast programming language analysis
+      - ttf-fira-code
+      - ttf-joypixels
+      - unrar
+      - vim
+      - vlc
+      - websocat # CLI client for websockets
+      - wget
+      - wxgtk2 # Erlang wxWidgets
+      - youtube-dl
+      - zsh
+  - name: Install yay AUR helper
+    aur: name=yay
+  - name: Install other AUR packages (now using yay)
+    aur:
+      name:
+      - 1password
+      - 1password-cli
+      - altair # GraphQL Client
+      - awsvpnclient
+      - beekeeper-studio-appimage
+      - camunda-modeler-bin
+      - direnv
+      - dust-bin # Faster alternative to du
+      - everdo # GTD TODO app
+      - glow-bin # Markdown CLI viewer
+      - gnome-shell-extension-appindicator-git
+      - gnome-shell-extension-arch-update
+      - gnome-shell-extension-gsconnect
+      - gnome-shell-extension-pop-shell-git
+      - gnome-shell-extension-system-monitor-git
+      - go-jsonnet
+      - google-chrome
+      - google-cloud-sdk
+      - gotask-taskfile-bin
+      - green-recorder
+      - heroku-cli-bin
+      - http-prompt
+      - insomnia-bin
+      - insync # To sync with OneDrive
+      - jetbrains-toolbox
+      - jsonnet-bundler-bin
+      - kind # Local kubernetes running in docker
+      - kubefwd-bin
+      - kubie-bin
+      - lbry-app-bin # Distributed YouTube Alternative
+      - lens-bin # Kubernetes IDE
+      - logiops-git
+      - marp-cli-bin
+      - mendeleydesktop
+      - nautilus-open-any-terminal
+      - nerd-fonts-complete
+      - ngrok
+      - obinskit # To configure Anne Pro 2 Keyboard
+      - obs-studio-browser
+      - pop-icon-theme-git
+      - postman-bin
+      - pulumi
+      - slack-desktop
+      - spotify
+      - sshping
+      - stern-bin
+      - streamlink-twitch-gui
+      - tanka-bin
+      - tealdeer # Faster tldr replacement
+      - teamviewer
+      - texlive-latexindent-meta
+      - ttf-twemoji
+      - visual-studio-code-bin
+      - ytop-bin # Modern top alternative
+      - zoom
