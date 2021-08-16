@@ -80,7 +80,6 @@
       - ttf-joypixels
       - unrar
       - vim
-      - vlc
       - websocat # CLI client for websockets
       - wget
       - wxgtk2 # Erlang wxWidgets
