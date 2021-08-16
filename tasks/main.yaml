@@ -100,6 +100,7 @@
       - direnv
       - dust-bin # Faster alternative to du
       - everdo # GTD TODO app
+      - git-delta-git
       - glow-bin # Markdown CLI viewer
       - gnome-shell-extension-appindicator-git
       - gnome-shell-extension-arch-update
