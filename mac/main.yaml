@@ -1,0 +1,127 @@
+---
+- hosts: localhost
+  vars:
+    dockitems_remove:
+      - Messages
+      - Mail
+      - Maps
+      - Photos
+      - FaceTime
+      - Contacts
+      - Reminders
+      - Notes
+      - TV
+      - Music
+      - Podcasts
+
+    homebrew_taps:
+      - homebrew/core
+      - homebrew/cask
+      - homebrew/cask-fonts
+      - go-task/tap
+      - heroku/brew
+      - txn2/tap
+
+    homebrew_installed_packages:
+      - ansible
+      - asdf
+      - asdf
+      - autoconf
+      - awscli
+      - bat
+      - chezmoi
+      - direnv
+      - dust
+      - fd
+      - fzf
+      - gh
+      - gist
+      - git-delta
+      - glow
+      - go-jsonnet
+      - go-task
+      - helm
+      - helmfile
+      - heroku
+      - htop
+      - httpie
+      - hyperfine
+      - jsonnet-bundler
+      - kind
+      - kubectx
+      - kubefwd
+      - kubernetes-cli
+      - kubie
+      - marp-cli
+      - mkcert
+      - neofetch
+      - openjdk
+      - postgresql
+      - procs
+      - pulumi
+      - qrencode
+      - ripgrep
+      - rustup
+      - shellcheck
+      - starship
+      - stern
+      - swaks
+      - tanka
+      - tealdeer
+      - terraform
+      - thefuck
+      - tmux
+      - tokei
+      - websocat
+      - wxwidgets
+      - youtube-dl
+      - zsh
+
+    homebrew_cask_appdir: /Applications
+    homebrew_cask_apps:
+      - font-fira-code
+      - 1password
+      - 1password-cli
+      - altair-graphql-client
+      - android-sdk
+      - aws-vpn-client
+      - calibre
+      - camunda-modeler
+      - chromedriver
+      - docker
+      - dotnet-sdk
+      - dropbox
+      - firefox
+      - github
+      - google-chrome
+      - google-cloud-sdk
+      - handbrake
+      - insomnia
+      - iterm2
+      - jetbrains-toolbox
+      - kitty
+      - lens
+      - ngrok
+      - postman
+      - slack
+      - slack
+      - spotify
+      - streamlabs-obs
+      - telegram
+      - vagrant
+      - visual-studio-code
+      - zoom
+
+  roles:
+    - role: elliotweiser.osx-command-line-tools
+    - role: geerlingguy.mac.homebrew
+      tags: ['homebrew']
+    - role: geerlingguy.mac.dock
+      tags: ['dock']
+
+  tasks:
+  - name: Install vscode extensions
+    script: ../scripts/install-vscode-extensions.sh
+  - name: Install oh-my-zsh
+    shell: |
+      [[ -d $HOME/.oh-my-zsh ]] || sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
