@@ -120,7 +120,6 @@
       - kind # Local kubernetes running in docker
       - kubefwd-bin
       - kubie-bin
-      - lbry-app-bin # Distributed YouTube Alternative
       - lens-bin # Kubernetes IDE
       - logiops-git
       - marp-cli-bin

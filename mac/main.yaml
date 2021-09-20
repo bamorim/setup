@@ -21,6 +21,8 @@
       - go-task/tap
       - heroku/brew
       - txn2/tap
+      - tilt-dev/tap
+      - norwoodj/tap
 
     homebrew_installed_packages:
       - ansible
@@ -30,6 +32,7 @@
       - awscli
       - bat
       - chezmoi
+      - ctlptl
       - direnv
       - dust
       - fd
@@ -42,6 +45,7 @@
       - go-task
       - helm
       - helmfile
+      - helm-docs
       - heroku
       - htop
       - httpie
@@ -88,6 +92,7 @@
       - calibre
       - camunda-modeler
       - chromedriver
+      - discord
       - docker
       - dotnet-sdk
       - dropbox
