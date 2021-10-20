@@ -94,7 +94,6 @@
       - 1password-cli
       - altair # GraphQL Client
       - awsvpnclient
-      - beekeeper-studio-appimage
       - camunda-modeler-bin
       - direnv
       - dust-bin # Faster alternative to du
@@ -137,7 +136,6 @@
       - sshping
       - stern-bin
       - streamlink-twitch-gui
-      - tanka-bin
       - tealdeer # Faster tldr replacement
       - teamviewer
       - texlive-latexindent-meta
@@ -148,8 +146,6 @@
 - name: Configure user
   hosts: localhost
   tasks:
-  - name: Install vscode extensions
-    script: ./scripts/install-vscode-extensions.sh
   - name: Install oh-my-zsh
     shell: |
       [[ -d $HOME/.oh-my-zsh ]] || sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
