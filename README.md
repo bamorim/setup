@@ -11,11 +11,11 @@ GPG Keys are stored in [1Password].
 
 There are still a few manual steps, but mostly:
 
-- Install Ansible and zsh:
-  - `sudo pacman -Syy`
-  - `sudo pacman -S ansible zsh`
-- Install ansible galaxy packages:
-  - `ansible-galaxy install kewlfft.aur` 
+Pick the directory based on the current system (either `mac` or `arch`)
+
+- Install Ansible and zsh
+- Install ansible galaxy packages
+  - `ansible-galaxy install -r requirements.yml`
 - Run the main playbook:
   - `ansible-playbook main.yaml -K`
 - Login to [1Password CLI] with `eval $(op login)`

@@ -106,7 +106,11 @@
       - jetbrains-toolbox
       - kitty
       - lens
+      - microsoft-office
+      - microsoft-teams
+      - mmhmm
       - ngrok
+      - poedit
       - postman
       - slack
       - slack
@@ -125,8 +129,6 @@
       tags: ['dock']
 
   tasks:
-  - name: Install vscode extensions
-    script: ../scripts/install-vscode-extensions.sh
   - name: Install oh-my-zsh
     shell: |
       [[ -d $HOME/.oh-my-zsh ]] || sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
