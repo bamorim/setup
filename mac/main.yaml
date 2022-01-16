@@ -29,7 +29,6 @@
     homebrew_installed_packages:
       - ansible
       - asdf
-      - asdf
       - autoconf
       - awscli
       - bat
