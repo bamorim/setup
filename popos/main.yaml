@@ -17,6 +17,21 @@
       - curl
       - gnupg
       - lsb-release
+      # Libraries for erlang
+      - autoconf
+      - m4
+      - libncurses5-dev
+      - libwxgtk3.0-gtk3-dev
+      - libgl1-mesa-dev
+      - libglu1-mesa-dev
+      - libpng-dev
+      - libssh-dev
+      - unixodbc-dev
+      - xsltproc
+      - fop
+      - libxml2-utils
+      - libncurses-dev
+      - openjdk-11-jdk
   - name: Install docker apt key
     become: true
     apt_key:
