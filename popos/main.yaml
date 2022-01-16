@@ -9,14 +9,15 @@
       update_cache: yes
       name:
       - build-essential
-      - procps
+      - ca-certificates
+      - curl
       - curl
       - file
       - git
-      - ca-certificates
-      - curl
       - gnupg
+      - inotify-tools
       - lsb-release
+      - procps
       # Libraries for erlang
       - autoconf
       - m4
@@ -42,7 +43,7 @@
     shell:
       cmd: | 
         add-apt-repository -y "deb [arch=amd64] https://download.docker.com/linux/ubuntu impish stable"
-  - name: Update apt cache and install packages
+  - name: Install programs from APT
     become: true
     apt:
       update_cache: yes
@@ -100,6 +101,7 @@
       - bat
       - chezmoi
       - ctlptl
+      - docker-compose
       - dust
       - fd
       - fzf
