@@ -30,6 +30,7 @@
       - ansible
       - asdf
       - autoconf
+      - aws-vault
       - awscli
       - bat
       - chezmoi

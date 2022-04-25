@@ -97,6 +97,7 @@
       path: "/home/linuxbrew/.linuxbrew/bin"
       name:
       - asdf
+      - aws-vault
       - awscli
       - bat
       - chezmoi
@@ -184,3 +185,13 @@
         curl -SL https://cache.agilebits.com/dist/1P/op/pkg/v1.12.3/op_linux_amd64_v1.12.3.zip -o "$tmpdir/op.zip"
         unzip -p $tmpdir/op.zip op > op
         chmod +x op
+  # For now I'm installing side by side to give chezmoi time to update
+  - name: Install 1password-cli v2
+    shell:
+      creates: ~/bin/op
+      chdir: ~/bin
+      cmd: |
+        tmpdir=$(mktemp -d)
+        curl -SL https://cache.agilebits.com/dist/1P/op2/pkg/v2.0.0/op_linux_amd64_v2.0.0.zip -o "$tmpdir/op.zip"
+        unzip -p $tmpdir/op.zip op > op2
+        chmod +x op2
