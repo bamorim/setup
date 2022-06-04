@@ -1,0 +1,83 @@
+---
+- name: Install Packages
+  hosts: localhost
+  tags: system-pkgs
+  tasks:
+  - name: Install brew taps
+    community.general.homebrew_tap:
+      name:
+      - bamorim/tap
+      - go-task/tap
+      - heroku/brew
+      - txn2/tap
+      - tilt-dev/tap
+      - norwoodj/tap
+      - pulumi/tap
+  - name: Install brew packages
+    community.general.homebrew:
+      path: "/home/linuxbrew/.linuxbrew/bin"
+      name:
+      - asdf
+      - aws-vault
+      - awscli
+      - bat
+      - chezmoi
+      - ctlptl
+      - docker-compose
+      - dust
+      - fd
+      - fzf
+      - gh
+      - gist
+      - git-delta
+      - go-jsonnet
+      - go-task
+      - helm
+      - helm-docs
+      - helmfile
+      - heroku
+      - htop
+      - httpie
+      - jsonnet-bundler
+      - kind
+      - kubectx
+      - kubefwd
+      - kubernetes-cli
+      - kubie
+      - marp-cli
+      - mkcert
+      - neofetch
+      - postgresql
+      - procs
+      - pulumi
+      - qrencode
+      - ripgrep
+      - rustup
+      - starship
+      - stern
+      - tealdeer
+      - terraform
+      - thefuck
+      - tilt
+      - tmux
+      - tokei
+      - websocat
+      - crd2pulumi
+      - op-cli
+      - jq
+- name: Install user apps & binaries
+  hosts: localhost
+  tags: user-apps
+  tasks:
+  - name: Install flatpacks packages
+    community.general.flatpak:
+      method: user
+      name:
+      - us.zoom.Zoom
+      - com.spotify.Client
+      - rest.insomnia.Insomnia
+      - com.getpostman.Postman
+  - name: Install oh-my-zsh
+    shell:
+      creates: ~/.oh-my-zsh
+      cmd: sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
