@@ -53,13 +53,27 @@
   - name: Install docker apt repository
     become: true
     retries: 20
-    shell:
-      cmd: | 
-        add-apt-repository -y "deb [arch=amd64] https://download.docker.com/linux/ubuntu jammy stable"
-  - name: update apt repositories
+    apt_repository:
+      repo: deb [arch=amd64] https://download.docker.com/linux/ubuntu jammy stable
+      filename: docker
+  - name: Install Google Cloud apt key
+    become: true
+    apt_key:
+      url: https://packages.cloud.google.com/apt/doc/apt-key.gpg
+  - name: Install Google Cloud apt repository
+    become: true
+    retries: 20
+    apt_repository:
+      repo: deb https://packages.cloud.google.com/apt cloud-sdk main
+      filename: google-cloud
+  - name: Install packages from added repos
     become: true
     apt:
       update_cache: yes
+      name:
+      - docker-ce
+      - docker-compose
+      - google-cloud-cli
   - name: Check if Docker Desktop is installed
     shell: dpkg-query -W 'docker-desktop'
     ignore_errors: True
