@@ -66,6 +66,16 @@
     apt_repository:
       repo: deb https://packages.cloud.google.com/apt cloud-sdk main
       filename: google-cloud
+  - name: Install ngrok apt key
+    become: true
+    apt_key:
+      url: https://ngrok-agent.s3.amazonaws.com/ngrok.asc
+  - name: Install ngrok apt repository
+    become: true
+    retries: 20
+    apt_repository:
+      repo: deb https://ngrok-agent.s3.amazonaws.com buster main
+      filename: ngrok
   - name: Install packages from added repos
     become: true
     apt:
@@ -74,6 +84,7 @@
       - docker-ce
       - docker-compose
       - google-cloud-cli
+      - ngrok
   - name: Check if Docker Desktop is installed
     shell: dpkg-query -W 'docker-desktop'
     ignore_errors: True
@@ -100,4 +111,5 @@
     shell:
       cmd: |
         CMDTOADD="eval \"\$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)\""
-        grep -qxF "$CMDTOADD" ~/.profile || echo "$CMDTOADD" >> ~/.profile
+        grep -qxF "$CMDTOADD" ~/.profile || echo "$CMDTOADD" >> ~/.profil
+            
