@@ -20,7 +20,6 @@
       - homebrew/core
       - homebrew/cask
       - homebrew/cask-fonts
-      - bamorim/tap
       - go-task/tap
       - heroku/brew
       - txn2/tap
@@ -30,14 +29,17 @@
 
     homebrew_installed_packages:
       - asdf
+      - autoconf
       - aws-vault
       - awscli
       - bat
       - chezmoi
+      - crd2pulumi
       - ctlptl
       - direnv
       - dust
       - fd
+      - fop
       - fzf
       - gh
       - gist
@@ -45,9 +47,10 @@
       - glow
       - go-jsonnet
       - go-task
+      - gpg
       - helm
-      - helmfile
       - helm-docs
+      - helmfile
       - heroku
       - htop
       - httpie
@@ -58,6 +61,7 @@
       - kubefwd
       - kubernetes-cli
       - kubie
+      - libxslt
       - marp-cli
       - mkcert
       - neofetch
@@ -76,12 +80,11 @@
       - tealdeer
       - terraform
       - thefuck
+      - tilt
       - tmux
       - tokei
-      - tilt
       - websocat
       - wxwidgets
-      - crd2pulumi
 
     homebrew_cask_appdir: /Applications
     homebrew_cask_apps:
@@ -90,7 +93,6 @@
       - 1password-cli
       - altair-graphql-client
       - android-sdk
-      - aws-vpn-client
       - calibre
       - camunda-modeler
       - chromedriver
@@ -118,7 +120,6 @@
       - spotify
       - streamlabs-obs
       - telegram
-      - vagrant
       - visual-studio-code
       - zoom
 
@@ -132,10 +133,6 @@
   hosts: localhost
   tags: system-pkgs
   tasks:
-  - name: Create home bin directory
-    command: 
-      creates: ~/bin
-      cmd: mkdir ~/bin
   - name: Install oh-my-zsh
     shell:
       creates: ~/.oh-my-zsh
