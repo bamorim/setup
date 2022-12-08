@@ -34,17 +34,20 @@
       - awscli
       - bat
       - chezmoi
+      - cmake
       - crd2pulumi
       - ctlptl
       - direnv
       - dust
       - fd
+      - flyctl
       - fop
       - fzf
       - gh
       - gist
       - git-delta
       - glow
+      - go
       - go-jsonnet
       - go-task
       - gpg
@@ -55,6 +58,7 @@
       - htop
       - httpie
       - hyperfine
+      - jq
       - jsonnet-bundler
       - kind
       - kubectx
@@ -88,39 +92,49 @@
 
     homebrew_cask_appdir: /Applications
     homebrew_cask_apps:
-      - font-fira-code
       - 1password
       - 1password-cli
       - altair-graphql-client
       - android-sdk
+      - around
       - calibre
       - camunda-modeler
       - chromedriver
+      - dash
+      - deckset
       - discord
       - docker
       - dotnet-sdk
       - dropbox
       - firefox
+      - flow
+      - font-fira-code
       - github
       - google-chrome
       - google-cloud-sdk
       - handbrake
+      - hyperkey
       - insomnia
       - iterm2
       - jetbrains-toolbox
+      - kap
       - kitty
       - lens
       - microsoft-office
       - mmhmm
       - ngrok
+      - obsidian
       - poedit
       - postman
+      - raycast
       - slack
       - slack
       - spotify
       - streamlabs-obs
       - telegram
+      - texpad
       - visual-studio-code
+      - whatsapp
       - zoom
 
   roles:
