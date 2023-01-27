@@ -15,6 +15,7 @@
       - TV
       - Music
       - Podcasts
+      - Freeform
 
     homebrew_taps:
       - homebrew/core
@@ -39,6 +40,7 @@
       - ctlptl
       - direnv
       - dust
+      - exercism
       - fd
       - flyctl
       - fop
@@ -95,6 +97,7 @@
       - 1password
       - 1password-cli
       - altair-graphql-client
+      - amphetamine
       - android-sdk
       - around
       - calibre
@@ -122,6 +125,7 @@
       - lens
       - microsoft-office
       - mmhmm
+      - mullvadvpn
       - ngrok
       - obsidian
       - poedit
